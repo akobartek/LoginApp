@@ -7,4 +7,5 @@ interface MainView {
     fun showLoading()
     fun showToast(msg: String)
     fun hideLoading()
+    fun hideKeyboard()
 }

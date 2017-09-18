@@ -19,6 +19,7 @@ class MainPresenter(private val view: MainView) {
             sequence.length > 5 && sequence.any { it.isDigit() } && sequence.any { it.isUpperCase() }
 
     fun onLoginButtonClicked(currentLogin: String, currentPassword: String) {
+        view.hideKeyboard()
         view.showLoading()
         Thread.sleep(5000)
         if (currentLogin == "login" && currentPassword == "Passw0rd")
@@ -27,5 +28,4 @@ class MainPresenter(private val view: MainView) {
             view.showToast("Error")
         view.hideLoading()
     }
-
 }
