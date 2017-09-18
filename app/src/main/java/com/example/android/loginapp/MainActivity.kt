@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainView {
@@ -43,5 +44,13 @@ class MainActivity : AppCompatActivity(), MainView {
 
     override fun showLoading() {
         loadingLayout.visibility = View.VISIBLE
+    }
+
+    override fun hideLoading() {
+        loadingLayout.visibility = View.GONE
+    }
+
+    override fun showToast(msg: String) {
+        Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT).show()
     }
 }

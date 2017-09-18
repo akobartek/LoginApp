@@ -1,8 +1,6 @@
 package com.example.android.loginapp
 
-import kotlinx.android.synthetic.main.activity_main.*
-
-class MainPresenter (private val view: MainView){
+class MainPresenter(private val view: MainView) {
 
     fun onLoginInfoChanged(currentLogin: String, currentPassword: String) {
         if (checkLogin(currentLogin.trim()) && checkPassword(currentPassword.trim())) {
@@ -22,12 +20,12 @@ class MainPresenter (private val view: MainView){
 
     fun onLoginButtonClicked(currentLogin: String, currentPassword: String) {
         view.showLoading()
-//                Thread.sleep(5000)
-//                if (loginET.text.toString().trim() == login && passwordET.text.toString().trim() == password)
-//                    Toast.makeText(applicationContext, "Logged in", Toast.LENGTH_SHORT).show()
-//                else
-//                    Toast.makeText(applicationContext, "Error", Toast.LENGTH_SHORT).show()
-//                loadingLayout.visibility = View.INVISIBLE
+        Thread.sleep(5000)
+        if (currentLogin == "login" && currentPassword == "Passw0rd")
+            view.showToast("Logged in")
+        else
+            view.showToast("Error")
+        view.hideLoading()
     }
 
 }
