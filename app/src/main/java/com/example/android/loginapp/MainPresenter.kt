@@ -21,11 +21,11 @@ class MainPresenter(private val view: MainView) {
     fun onLoginButtonClicked(currentLogin: String, currentPassword: String) {
         view.hideKeyboard()
         view.showLoading()
-        Thread.sleep(5000)
+
         if (currentLogin == "login" && currentPassword == "Passw0rd")
             view.showToast("Logged in")
         else
             view.showToast("Error")
-        view.hideLoading()
+//        view.hideLoading()
     }
 }
